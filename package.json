@@ -1,0 +1,15 @@
+{
+  "name": "$NAME",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/webpack --config ./webpack/webpack.prod.config.babel.js",
+    "watch": "./node_modules/.bin/webpack -w --config ./webpack/webpack.dev.config.babel.js",
+    "serve": "./node_modules/.bin/webpack-dev-server -d --hot --config ./webpack/webpack.dev.config.babel.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {}
+}
