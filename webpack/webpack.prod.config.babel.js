@@ -15,4 +15,4 @@ config.plugins = [
   }),
 ]
 
-export config
+export default config
