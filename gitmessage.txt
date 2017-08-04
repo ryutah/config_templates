@@ -1,8 +1,17 @@
-Fix: Subject
-Add: Subect
-Modify: Subject
-Clean: Subject
-Remove: Subject
+Fix: バグ修正
+HotFix: クリティカルなバグ修正
+Add: 新規(ファイル)機能追加
+Update: 機能修正(バグではない)
+Change: 仕様変更
+Clean: 整理(リファクタリング等)
+Disable: 無効化(コメントアウト等)
+Remove: 削除(ファイル)
+Upgrade: バージョンアップ
+Revert: 変更取り消し
 
 what happened
-ref : Issue Link
+
+# 例)
+# Fix: #1 XX検索機能のバグ修正
+#
+# * 検索条件にXXを指定した際に、XXXXエラーが発生しないように条件分岐を追加
