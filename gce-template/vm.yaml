@@ -1,0 +1,11 @@
+imports:
+  - path: template/helpers/common.jinja
+  - path: template/dev-instance.jinja
+
+resources:
+  - name: sandbox
+    type: dev-instance.jinja
+    properties:
+      zone: us-central1-a
+      name: sandbox
+      startup-script-url: gs://hogehoge/fugafuga
