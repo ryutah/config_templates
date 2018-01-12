@@ -1,8 +1,10 @@
 #!/bin/sh
-sudo apt update
-sudo apt upgrade
 
-sudo apt install zsh zlib1g-dev libssl-dev
+sudo add-apt-repository -y ppa:neovim-ppa/stable
+sudo apt update
+sudo apt -y upgrade
+
+sudo apt install zsh zlib1g-dev libssl-dev neovim
 
 # Install prezto
 echo ${ZDOTDIR:-$HOME}
