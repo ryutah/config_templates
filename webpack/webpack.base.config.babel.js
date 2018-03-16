@@ -1,11 +1,11 @@
-import path from "path"
+import path from "path";
 
 export default {
   entry: path.join(__dirname, "../src/app.js"),
   output: {
     publicPath: "/",
     path: path.join(__dirname, "../public"),
-    filename: "bundle.js",
+    filename: "bundle.js"
   },
   // when want to export multiple entry
   // entry: {
@@ -20,16 +20,19 @@ export default {
 
   target: "web",
   resolve: {
-    extensions: ["*", ".js", ".jsx"],
+    extensions: ["*", ".js", ".jsx"]
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
-        // include: [path.resolve(__dirname, "src")],
         exclude: /node_modules/,
-        loader: "babel-loader",
+        use: [
+          {
+            loader: "babel-loader"
+          }
+        ]
       }
     ]
-  },
-}
+  }
+};
