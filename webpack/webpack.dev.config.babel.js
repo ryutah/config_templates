@@ -1,6 +1,7 @@
 import config from "./webpack.base.config.babel";
+import merge from "webpack-merge";
 
-const devConfig = {
+export default merge(config, {
   mode: "development",
   devtool: "inline-source-map",
   devServer: {
@@ -9,6 +10,4 @@ const devConfig = {
     port: "3000",
     host: "0.0.0.0"
   }
-};
-
-export default Object.assign({}, config, devConfig);
+});

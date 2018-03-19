@@ -1,7 +1,8 @@
 import UglifyJsPlugin from "uglifyjs-webpack-plugin";
 import config from "./webpack.base.config.babel";
+import merge from "webpack-merge";
 
-const prodConfig = {
+export merge(config, {
   mode: "production",
   plugins: [
     new UglifyJsPlugin({
@@ -16,6 +17,4 @@ const prodConfig = {
       }
     })
   ]
-};
-
-export default Object.assign({}, config, prodConfig);
+})

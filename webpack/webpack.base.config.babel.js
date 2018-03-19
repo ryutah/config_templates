@@ -1,4 +1,5 @@
 import path from "path";
+import HtmlWebpackPlugin from "html-webpack-plugin";
 
 export default {
   entry: path.join(__dirname, "../src/app.js"),
@@ -18,6 +19,11 @@ export default {
   //   path: path.join(__dirname, "public"),
   // },
 
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "src/index.html"
+    })
+  ],
   target: "web",
   resolve: {
     extensions: ["*", ".js", ".jsx"]
