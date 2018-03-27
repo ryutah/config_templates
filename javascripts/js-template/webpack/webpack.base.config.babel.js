@@ -6,7 +6,7 @@ export default {
   output: {
     publicPath: "/",
     path: path.join(__dirname, "../public"),
-    filename: "bundle.js"
+    filename: "bundle.js",
   },
   // when want to export multiple entry
   // entry: {
@@ -21,12 +21,12 @@ export default {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: "src/index.html"
-    })
+      template: path.join(__dirname, "src/index.html"),
+    }),
   ],
   target: "web",
   resolve: {
-    extensions: ["*", ".js", ".jsx"]
+    extensions: ["*", ".js", ".jsx"],
   },
   module: {
     rules: [
@@ -35,10 +35,10 @@ export default {
         exclude: /node_modules/,
         use: [
           {
-            loader: "babel-loader"
-          }
-        ]
-      }
-    ]
-  }
+            loader: "babel-loader",
+          },
+        ],
+      },
+    ],
+  },
 };
