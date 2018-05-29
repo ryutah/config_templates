@@ -1,5 +1,0 @@
-resources:
-- name: default-gcs
-  type: storage.v1.bucket
-  properties:
-    name: dev-ryutah-sample-gcs-bucket
