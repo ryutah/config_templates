@@ -10,7 +10,7 @@ RUBY_VERSION="2.5.1"
 
 function install_dependencies() {
   if [ "$(which anyenv)" = "" ]; then
-    sudo apt-get install -y build-essential zlib1g-dev
+    sudo apt-get install -y build-essential zlib1g-dev libbz2-dev libreadline-dev libssl-dev
 
     echo "Install anyenv..."
     # install anyenv
@@ -45,7 +45,7 @@ function install_dependencies() {
     rbenv install ${RUBY_VERSION}
     rbenv global ${RUBY_VERSION}
 
-    echo "Install rust..."
+    echo "Install rust latest..."
     curl https://sh.rustup.rs -sSf | sh -y
   fi
 }
