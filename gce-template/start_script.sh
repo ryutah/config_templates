@@ -42,7 +42,9 @@ function install_dependencies() {
     nodenv global ${NODE_VERSION}
 
     echo "Install ruby ${RUBY_VERSION}..."
-    rbenv install ${RUBY_VERSION}
+    # XXX failed to install ruby by happening error "recipe for target 'rdoc' failed"
+    # so disable rdoc build by option. ref https://github.com/postmodern/ruby-install/issues/223#issuecomment-340789757
+    RUBY_CONFIGURE_OPTS=--disable-install-doc rbenv install ${RUBY_VERSION}
     rbenv global ${RUBY_VERSION}
 
     echo "Install rust latest..."
