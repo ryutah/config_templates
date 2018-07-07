@@ -1,0 +1,16 @@
+nfo:
+  title: Sandbox instance template
+  author: ryutah
+  description: Creates a new sandbox gce instance
+  version: 1.0
+
+imports:
+- path: instance.jinja
+
+properties:
+  sourceImage:
+    type: string
+    default: projects/ubuntu-os-cloud/global/images/ubuntu-1804-bionic-v20180617
+    description: |
+      Instance's operation system.
+      Available images can be found by `gcloud compute image list`

@@ -1,11 +1,13 @@
+{% set PROJECT = env["project"] %}
+{% set DEPLOYMENT = env["deployment"] %}
+
 resources:
-- name: dev-instance
+- name: {{ DEPLOYMENT }}-instnce
   type: compute.v1.instance
   properties:
-    name: dev-instance
     zone: us-central1-a
     kind: compute#instance
-    machineType: projects/{{ env["project"] }}/zones/us-central1-a/machineTypes/f1-micro
+    machineType: projects/{{ PROJECT }}/zones/us-central1-a/machineTypes/f1-micro
     metadata:
       kind: compute#metadata
       items: []
@@ -17,15 +19,15 @@ resources:
       boot: true
       mode: READ_WRITE
       autoDelete: true
-      deviceName: dev-instance-boot-disk
+      deviceName: {{ DEPLOYMENT }}-boot-disk
       initializeParams:
-        sourceImage: projects/ubuntu-os-cloud/global/images/ubuntu-1804-bionic-v20180522
-        diskType: projects/{{ env["project"] }}/zones/us-central1-a/diskTypes/pd-standard
+        sourceImage: {{ properties["sourceImage"] }}
+        diskType: projects/{{ PROJECT }}/zones/us-central1-a/diskTypes/pd-standard
         diskSizeGb: '30'
     canIpForward: false
     networkInterfaces:
     - kind: compute#networkInterface
-      subnetwork: projects/{{ env["project"] }}/regions/us-central1/subnetworks/default
+      subnetwork: projects/{{ PROJECT }}/regions/us-central1/subnetworks/default
       accessConfigs:
       - kind: compute#accessConfig
         name: External NAT
@@ -42,9 +44,4 @@ resources:
     serviceAccounts:
     - email: {{ env["project_number"] }}-compute@developer.gserviceaccount.com
       scopes:
-      - https://www.googleapis.com/auth/devstorage.read_only
-      - https://www.googleapis.com/auth/logging.write
-      - https://www.googleapis.com/auth/monitoring.write
-      - https://www.googleapis.com/auth/servicecontrol
-      - https://www.googleapis.com/auth/service.management.readonly
-      - https://www.googleapis.com/auth/trace.append
+      - https://www.googleapis.com/auth/cloud-platform
