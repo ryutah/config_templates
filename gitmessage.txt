@@ -1,17 +1,13 @@
-Fix: バグ修正
-HotFix: クリティカルなバグ修正
-Add: 新規(ファイル)機能追加
-Update: 機能修正(バグではない)
-Change: 仕様変更
-Clean: 整理(リファクタリング等)
-Disable: 無効化(コメントアウト等)
-Remove: 削除(ファイル)
-Upgrade: バージョンアップ
-Revert: 変更取り消し
+feat(type): 機能追加, 主要な変更
+fix(type): バグ修正
+hotfix(type): 緊急修正
+docs(type): ドキュメントのみの変更
+refactor(type): コードリファクタリング
+chore(type): その他雑多な変更
 
 what happened
 
 # 例)
-# Fix: #1 XX検索機能のバグ修正
+# feat(entity): XXモデルを追加 refs #1
 #
-# * 検索条件にXXを指定した際に、XXXXエラーが発生しないように条件分岐を追加
+# * XXモデルとリポジトリ処理を作成
