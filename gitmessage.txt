@@ -1,13 +1,24 @@
+# See: https://www.conventionalcommits.org/en/v1.0.0/
+
 feat(type): 機能追加, 主要な変更
 fix(type): バグ修正
 hotfix(type): 緊急修正
 docs(type): ドキュメントのみの変更
 refactor(type): コードリファクタリング
+pref(type): パフォーマンスの改善
+ci: CIに関する変更
+style(type): コードフォーマット、スタイルに関する変更
+test(type): 不足しているテストコードの追加
 chore(type): その他雑多な変更
 
-what happened
+[optional body]
+
+BREAKING CHANGE: refactor to use JavaScript features not available in Node 6.
 
 # 例)
+#
 # feat(entity): XXモデルを追加 refs #1
 #
 # * XXモデルとリポジトリ処理を作成
+# 
+# BREAKING CHANGE: refactor to use JavaScript features not available in Node 6.
